@@ -5,7 +5,7 @@ public class QuestionService {
    String selection[]=new String[5];
 
    public QuestionService(){
-questions[0] = new Question(
+   questions[0] = new Question(
     1,
     "Which programming language is platform-independent?",
     "C",
@@ -75,4 +75,16 @@ questions[4] = new Question(
 System.out.println(s);
       }
    }
+    public void printScore(){
+      int score =0;
+     for(int i=0;i<questions.length;i++){
+     Question que= questions[i];
+     String actualAnswer = que.getAnswer();
+     String userAnswer  = selection[i];
+     if(actualAnswer.equals(userAnswer)){
+score++;
+     }
+     }
+     System.out.println("your score is: "+ score);
+    }
 }
